@@ -1,0 +1,88 @@
+{
+  "name": "@cognosis/platform",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cognosisai/platform.git"
+  },
+  "version": "0.6.1",
+  "private": false,
+  "scripts": {
+    "build": "tsc --build",
+    "build.watch": "tsc --build --watch",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write",
+    "lint": "eslint .",
+    "start": "ts-node src/worker.ts",
+    "start.watch": "nodemon src/worker.ts",
+    "workflow": "ts-node src/client.ts",
+    "test": "jest"
+  },
+  "nodemonConfig": {
+    "execMap": {
+      "ts": "ts-node"
+    },
+    "ext": "ts",
+    "watch": [
+      "src"
+    ]
+  },
+  "dependencies": {
+    "@babel/core": "^7.19.6",
+    "@babel/parser": "^7.19.6",
+    "@babel/standalone": "^7.19.6",
+    "@elastic/elasticsearch": "^8.2.1",
+    "@ngrok/ngrok-api": "^0.9.0",
+    "@slack/bolt": "^3.12.1",
+    "@temporalio/activity": "^1.0.0",
+    "@temporalio/client": "^1.0.0",
+    "@temporalio/worker": "^1.0.0",
+    "@temporalio/workflow": "^1.0.0",
+    "@tensorflow-models/universal-sentence-encoder": "^1.3.3",
+    "@tensorflow/tfjs": "^3.19.0",
+    "@types/mustache": "^4.2.1",
+    "@types/slack-node": "^0.1.4",
+    "axios": "^0.27.2",
+    "cli-table": "^0.3.11",
+    "cli-table3": "^0.6.3",
+    "csv-parse": "^5.3.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "google-auth-library": "^8.5.2",
+    "gpt-3-encoder": "^1.1.4",
+    "handlebars": "^4.7.7",
+    "json2csv": "^5.0.7",
+    "json5": "^2.2.1",
+    "mustache": "^4.2.0",
+    "mysql2": "^2.3.3",
+    "mysql2-promise": "^0.1.4",
+    "nanoid": "3.x",
+    "nargs": "^0.0.2",
+    "natural": "^5.2.3",
+    "notion-client": "^6.13.4",
+    "openai": "^3.0.0",
+    "semaphore-async-await": "^1.5.1"
+  },
+  "devDependencies": {
+    "@babel/generator": "^7.19.6",
+    "@tsconfig/node14": "^1.0.0",
+    "@types/babel__core": "^7.1.19",
+    "@types/cheerio": "^0.22.31",
+    "@types/crawler": "^1.2.2",
+    "@types/jest": "^29.4.0",
+    "@types/node": "^16.11.43",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-deprecation": "^1.2.1",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.7.1",
+    "ts-jest": "^29.0.5",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.4.2"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ]
+}
