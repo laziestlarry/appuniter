@@ -189,3 +189,55 @@ ts-node src/cli/schedule.ts start-weekly-improvements knowledge_index "Increase 
 ### Cognosis AI SDK
 
 Cognosis AI Platform includes 
+### Uniter Hierarchy (Main App)
+
+Model organizations, units, branches, and partner repos; ingest partner knowledge; unify inventory across subsidiaries; run an initial launch.
+
+- Create an organization:
+```
+ts-node src/cli/uniter.ts create-org uniter "Uniter Main" "Main app orchestrating subsidiaries"
+```
+
+- Add a unit (link connectors by id):
+```
+ts-node src/cli/uniter.ts add-unit uniter retail-us "Retail US" shopify,amazon
+```
+
+- Add a branch:
+```
+ts-node src/cli/uniter.ts add-branch uniter retail-us nyc "NYC Flagship" US-NY
+```
+
+- Register a partner repo (local path or URL):
+```
+ts-node src/cli/uniter.ts add-partner uniter partner1 "Solution Partner A" ./partner-app solution-partner
+```
+
+- Ingest partner repos into knowledge index:
+```
+ts-node src/cli/uniter.ts ingest-partners uniter knowledge_index
+```
+
+- Unify inventory across all units:
+```
+ts-node src/cli/uniter.ts unify-all uniter
+```
+
+- Initial launch (ingest local knowledge + unify inventory):
+```
+ts-node src/cli/uniter.ts launch uniter knowledge_index .
+```
+
+### Payments (Payoneer scaffolding)
+
+Create checkout sessions and fetch localized receiving accounts (USD, EUR, GBP). Wire real API in activities for production.
+
+- Localized accounts:
+```
+ts-node -e "(async()=>{const w=require('./dist');console.log(await w.workflows.localizedAccounts())})()"
+```
+
+- Create checkout session:
+```
+// Expose via CLI if desired; currently available through workflow API
+```

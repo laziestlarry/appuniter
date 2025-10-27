@@ -10,3 +10,4 @@ export * from './activities/vector_search';
 export * from './activities/application/codegrunt';
 export * from './activities/files';
 export * from './activities/connectors';
+export * from './activities/payments';
