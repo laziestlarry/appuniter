@@ -15,3 +15,5 @@ export * from './workflows/autonomy';
 export * from './workflows/commerce';
 export * from './workflows/metrics';
 export * from './workflows/scheduler';
+export * from './workflows/payments';
+export * from './workflows/org';
